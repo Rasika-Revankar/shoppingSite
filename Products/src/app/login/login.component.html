@@ -1,21 +1,25 @@
 <div id="login">
     <div class="">
-        <div id="login-row" class="row justify-content-center align-items-center m-0">
-            <div id="login-column" >
-                <div class="login-box col-md-4">
+        <div id="login-row" class="justify-content-center align-items-center m-0">
+            <div id="login-column">
+                <div class="login-box">
                     <form id="login-form" class="form" action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <h3 class="text-center text-info">Login</h3>
                         <div class="form-group">
                             <label for="username" class="text-info">Username:</label><br>
-                            <input type="text" name="username" id="username" class="form-control" formControlName="username">
+                            <input type="text" name="username" id="username" class="form-control"
+                                formControlName="username">
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" formControlName="password">
+                            <input type="password" name="password" id="password" class="form-control"
+                                formControlName="password">
                         </div>
                         <div class="form-group">
-                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                            <button [disabled]="!loginForm.valid" type="submit"  name="submit" class="btn btn-info btn-md" >Submit</button>
+                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input
+                                        id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <button [disabled]="!loginForm.valid" type="submit" name="submit"
+                                class="btn btn-info btn-md">Submit</button>
                         </div>
                         <div id="register-link" class="text-right">
                             <a href="#" class="text-info">Register here</a>

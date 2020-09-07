@@ -8,8 +8,8 @@ const routes: Routes = [
   { path: 'product-details', component: ProductDetailsComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/product', pathMatch: 'full' }, // redirect to `first-component`
-  // { path: '**', component: PageNotFoundComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full' }, // redirect to `first-component`
+  // { path: '**', component: PageNotFoundComponent },  
 ];
 
 @NgModule({
