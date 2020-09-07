@@ -1,0 +1,91 @@
+<!-- 
+<app-products></app-products> -->
+<div class="header">
+    <app-header [cartItems]="cartItems"></app-header>
+</div>
+<div>
+    <p-dataView #dv [value]="cars" [paginator]="true" [rows]="6" paginatorPosition="bottom" filterBy="Category, name"
+        [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+        <p-header>
+            <div class="ui-helper-clearfix row">
+                <div class="col-lg-12">
+                    <div class="col-lg-4 col-md-4 col-sm-4 p-md-4">
+                        <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By"
+                            (onChange)="onSortChange($event)" [style]="{'min-width':'140px'}"></p-dropdown>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 p-md-4">
+                        <div style="position:relative">
+                            <input type="search" pInputText placeholder="Search"
+                                (input)="dv.filter($event.target.value)">
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-4 col-sm-4 p-md-4" style="text-align:right">
+                        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                    </div>
+                </div>
+            </div>
+        </p-header>
+        <ng-template let-item pTemplate="listItem">
+            <div class="p-col-12">
+                <div class="item-details">
+                    <div class="row m-0">
+                        <div class="col-lg-12 col-md-12 col-sm-12 m-0">
+                            <div class="listImage col-lg-6 col-md-6 col-sm-12"><img [src]="getImageLink(item.image)" height="60" width="60"></div>
+                            
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                                <a routerLink="/product-details"> <b>{{item.name}}</b></a>
+                                <div class="p-col-12">Price: <b>{{item.price}}</b></div>
+                                <div class="p-col-12">
+                                    <p-rating [(ngModel)]="item.rating" [readonly]="true" [cancel]="false"></p-rating>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button pButton type="button" icon="pi pi-shopping-cart"
+                        (click)="selectItems($event, item)"></button>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template let-item pTemplate="gridItem">
+            <div style="padding:1em" class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <p-card>
+                    <!-- [header]="item.name" -->
+                    <div [style.color]="getStatusColor(item.inventoryStatus)"><strong>{{item.inventoryStatus}}</strong>
+                    </div>
+                    <div class="product">
+                        <div class="product-image text-center cp"><a><img [src]="getImageLink(item.image)"></a>
+                        </div>
+                        <ul class="social">
+                            <li><a href="" routerLink="/product-details" data-tip="View"><i class="fa fa-eye"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart" (click)="selectItems($event, item)"><i
+                                        class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="text-center lg-font fw-600">{{item.name}}</div>
+                    <div class="row m-0">
+                        <div class=" col-lg-12">
+                            <div class="col-lg-8 col-md-8 col-sm-8">{{item.category}}</div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 textright"><b> ${{item.price}}</b></div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 ">
+                        <div class=" col-lg-12">
+                            <div class="col-lg-8 col-md-8 col-sm-8 p-0">
+                                <p-rating [(ngModel)]="item.rating" [readonly]="true" [cancel]="false"></p-rating>
+                            </div>
+                        </div>
+                    </div>
+                </p-card>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>
+
+<p-dialog header="Added to cart" [(visible)]="displayDialog" [minY]="70" showEffect="fade" [modal]="true"
+    [style]="{width: '225px'}" (onAfterHide)="onDialogHide()" [contentStyle]="{padding: '2em', textAlign: 'center'}">
+    <div *ngIf="selectedItem">
+        <strong>{{selectedItem.name}} - ${{selectedItem.price}}</strong>
+    </div>
+</p-dialog>

@@ -1,0 +1,116 @@
+.filter-container {
+    text-align: center;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-bottom: 1px solid #d9dad9;
+}
+
+.item-details > div {
+    display: flex;
+}
+
+.item-details > div img {
+    margin-right: 14px;
+    text-align: center;
+}
+
+.product-image img  {
+    box-shadow: 2px 5px 10px grey;
+}
+
+.listImage img {
+    width: 45%;
+    height: 45%
+}
+
+img:hover .cartIcon{
+    box-shadow: 2px 5px 10px grey;
+} 
+
+.item-detail {
+    padding: 0 1em 1em 1em;
+    border-bottom: 1px solid #d9dad9;
+    margin: 1em;
+}
+
+.product-image {
+    width: 100%;
+    margin: 2em 0;
+}
+
+.textright {
+    text-align: right;
+}
+
+a{
+    color: black;
+}
+
+.cp {
+    cursor: pointer
+}
+
+.header {
+    position:sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+.product .social {
+    width:100px;
+    padding:0;
+    margin:0;
+    list-style:none;
+    opacity:0;
+    transform:translateY(-50%) translateX(-50%);
+    position:absolute;
+    top:60%;
+    left:50%;
+    z-index:1;
+    transition:all .3s ease 0s}
+
+.product .social li {
+    display:inline-block
+}
+.product .social li a{color:#fff;background-color:#333;font-size:16px;line-height:40px;text-align:center;height:40px;width:40px;margin:0 2px;display:block;position:relative;transition:all .3s ease-in-out}
+.product .social li a:hover{
+    color:#fff;
+}
+.product .social li a:after,.product-grid .social li a:before{
+    content:attr(data-tip);
+    color:#fff;
+    background-color:#000;font-size:12px;
+    letter-spacing:1px;
+    line-height:20px;
+    padding:1px 5px;
+    white-space:nowrap;
+    opacity:0;
+    transform:translateX(-50%);
+    position:absolute;
+    left:50%;
+    top:-30px
+}
+.product-grid .social li a:after{ 
+    content:'';
+    height:15px;
+    width:15px;
+    border-radius:0;
+    transform:translateX(-50%) rotate(45deg);
+    top:-20px;
+    z-index:-1}
+.product-grid .social li a:hover:after,.product-grid .social li a:hover:before 
+    {opacity:1}
+.product:hover .social{
+    opacity:1;
+    top:50%
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,body {
+    margin: 0px;
+}
+
+
+.ui-panel-content {
+    padding: 1em;
+}
+
+
+.lg-font {
+    font-size: 18px;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.ui-paginator {
+    background-color: white !important ;
+}
+
+@media (max-width: 1024px) {
+    .car-details img {
+          width: 75px;
+    }
+
+    .filter-container {
+        text-align: left;
+    }
+}

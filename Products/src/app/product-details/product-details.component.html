@@ -1,0 +1,83 @@
+<div class="header">
+    <app-header [cartItems]="cartItems"></app-header>
+</div>
+<div class="product-details">
+    <div class="row m-0">
+        <div class="col-lg-12 bg-primary text-white p-2 text-center text-capitalize lg-font">
+            Product details
+        </div>
+    </div>
+    <div class="row mt-4 m-0">
+        <div class="col-lg-1 text-center">
+            <!-- Nav tabs -->
+
+            <div class="pro-details">
+                <ul class="nav nav-pills flex-column">
+                    <li role="presentation" class=" nav-item active" (click)="colorSelected('Blue')">
+                        <a href="#blue" aria-controls="blue" role="tab" data-toggle="tab" aria-selected="true">
+                            <img class="img-fluid"
+                                src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/product/blue-t-shirt.jpg" />
+                        </a></li>
+                    <li role="presentation" class="nav-item " (click)="colorSelected('Green')">
+                        <a href="#green" aria-controls="green" role="tab" data-toggle="tab">
+                            <img class="img-fluid"
+                                src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/product/green-t-shirt.jpg" />
+                        </a>
+                    </li>
+                    <li role="presentation" class="nav-item" (click)="colorSelected('Grey')">
+                        <a href="#grey" aria-controls="grey" role="tab" data-toggle="tab">
+                            <img class="img-fluid"
+                                src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/product/grey-t-shirt.jpg" />
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center border-right border-secondery mtd-20 p-0">
+            <div class="tab-content row h-100 d-flex justify-content-center align-items-center" id="myTabContent">
+                <div role="tabpanel" class="tab-pane active col-lg-12" id="blue">
+                    <img class="img-fluid displayImg"
+                        src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/product/blue-t-shirt.jpg" />
+                </div>
+                <div class="tab-pane fade col-lg-12" id="green" role="tabpanel">
+                    <img class="img-fluid displayImg"
+                        src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/product/green-t-shirt.jpg" />
+                </div>
+                <div class="tab-pane fade col-lg-12" id="grey" role="tabpanel">
+                    <img class="img-fluid displayImg"
+                        src="https://primefaces.org/primeng/showcase/assets/showcase/images/demo/product/grey-t-shirt.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <h2>
+                Mens {{shirtColor}} T-Shirt
+            </h2>
+            <h3>
+                $26
+            </h3>
+            <h4 class="text-success bold mt-15"> <strong>STOCK AVAILABLE</strong> </h4>
+            <div class="mt-15">
+                <button class="btn btn-secondary mr-10">
+                    <i class="fa fa-shopping-cart"></i> Add to cart
+                </button>
+                <button class="btn btn-primary " type="button" icon="pi pi-shopping-cart">BUY NOW</button>
+            </div>
+
+            <h5 class="mt-15">
+                Product description
+            </h5>
+            <p>
+                Embrace casual attire on your days off with this smart cotton shirt. A true wardrobe essential for times
+                that call for sophistication and comfort. Short sleeves give this outfit a stylish edge while the
+                stunning color will keep the focus on you.
+            </p>
+            <p>
+                Available offers
+            </p>
+            <ul>
+                <li class="pb-2"><b>Bank Offer</b> 5% Unlimited Cashback on Bank Credit Card <b>T&C</b></li>
+                <li><b>Bank Offer</b> 5% Instant Discount on EMI with Bank Credit and Debit Cards <b>T&C</b></li>
+            </ul>
+        </div>
+    </div>
+</div>
