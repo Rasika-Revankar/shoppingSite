@@ -4,13 +4,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 
-
 const routes: Routes = [
   { path: 'product-details', component: ProductDetailsComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/product', pathMatch: 'full' }, // redirect to `first-component`
-  // { path: '**', component: PageNotFoundComponent }, 
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

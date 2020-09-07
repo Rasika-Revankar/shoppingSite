@@ -4,7 +4,7 @@
     <app-header [cartItems]="cartItems"></app-header>
 </div>
 <div>
-    <p-dataView #dv [value]="cars" [paginator]="true" [rows]="6" paginatorPosition="bottom" filterBy="Category, name"
+    <p-dataView #dv [value]="product" [paginator]="true" [rows]="6" paginatorPosition="bottom" filterBy="Category, name"
         [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
         <p-header>
             <div class="ui-helper-clearfix row">
@@ -30,8 +30,9 @@
                 <div class="item-details">
                     <div class="row m-0">
                         <div class="col-lg-12 col-md-12 col-sm-12 m-0">
-                            <div class="listImage col-lg-6 col-md-6 col-sm-12"><img [src]="getImageLink(item.image)" height="60" width="60"></div>
-                            
+                            <div class="listImage col-lg-6 col-md-6 col-sm-12"><img [src]="getImageLink(item.image)"
+                                    height="60" width="60"></div>
+
                             <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
                                 <a routerLink="/product-details"> <b>{{item.name}}</b></a>
                                 <div class="p-col-12">Price: <b>{{item.price}}</b></div>

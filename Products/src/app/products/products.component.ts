@@ -12,7 +12,7 @@ import { Product } from '../product.interface';
 export class ProductsComponent implements OnInit {
 
 
-  cars: Product[];
+  product: Product[];
 
   selectedItem: Product;
 
@@ -38,17 +38,15 @@ export class ProductsComponent implements OnInit {
       { label: 'Stock', value: 'inventoryStatus' },
       { label: 'Low to High', value: 'price' },
       { label: 'High to low', value: '!price' },
-
     ];
   }
 
   getProducts() {
     this.service.getProducts().subscribe((response) => {
-      console.log(response)
-      this.cars = response.data
+      this.product = response.data;
     }, (err) => {
-      alert('Something went wrong')
-    })
+      alert('Something went wrong');
+    });
   }
 
   selectItems(event: Event, item: Product) {
@@ -59,13 +57,12 @@ export class ProductsComponent implements OnInit {
   }
 
   onSortChange(event) {
-    let value = event.value;
+    const value = event.value;
 
     if (value.indexOf('!') === 0) {
       this.sortOrder = -1;
       this.sortField = value.substring(1, value.length);
-    }
-    else {
+    } else {
       this.sortOrder = 1;
       this.sortField = value;
     }
@@ -84,6 +81,7 @@ export class ProductsComponent implements OnInit {
         return 'red';
       case 'LOWSTOCK':
         return 'orange';
+      default: return '';
     }
   }
 

@@ -16,10 +16,10 @@ export class HeaderComponent implements OnInit {
   }
 
   openNav() {
-    $("#mySidenav").css("width", "250px");
+    $('#mySidenav').css('width', '250px');
   }
 
   closeNav() {
-    $("#mySidenav").css("width", "0px");
+    $('#mySidenav').css('width', '0px');
   }
 }
